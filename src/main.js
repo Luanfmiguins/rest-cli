@@ -77,7 +77,7 @@ async function copyTemplateFiles(options, logCallback) {
 
       const statResponse = await stat(path.resolve(searchInDirectory));
 
-      let pathSplit = searchInDirectory.split("\\")
+      let pathSplit = searchInDirectory.split(/[\\/]/)
       if (!pathSplit.length) {
         pathSplit = searchInDirectory.split("/")
       }
