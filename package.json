@@ -1,7 +1,7 @@
 {
-    "name": "@smart/rest",
+    "name": "@rest/rest",
     "version": "1.0.3",
-    "description": "CLI para projetos Smart Performance",
+    "description": "CLI para projetos Core",
     "main": "src/main.js",
     "bin": {
         "rest": "bin/rest-cli",
@@ -19,7 +19,7 @@
         "cli",
         "smart generate"
     ],
-    "author": "David Florencios",
+    "author": "Luan Gustavo",
     "license": "MIT",
     "dependencies": {
         "arg": "^4.1.0",
