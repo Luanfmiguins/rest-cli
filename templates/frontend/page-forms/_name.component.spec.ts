@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { _NamePage } from "./_namespace.page";
+import { _NameComponent } from "./_namespace.component";
 
-describe("_NamePage", () => {
-	let component: _NamePage;
-	let fixture: ComponentFixture<_NamePage>;
+describe("_NameComponent", () => {
+	let component: _NameComponent;
+	let fixture: ComponentFixture<_NameComponent>;
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [ _NamePage ]
+			declarations: [ _NameComponent ]
 		})
 			.compileComponents();
 	});
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(_NamePage);
+		fixture = TestBed.createComponent(_NameComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});

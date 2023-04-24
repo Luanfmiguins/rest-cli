@@ -1,9 +1,9 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { _NamePage } from "./_namespace.page";
+import { _NameComponent } from "./_namespace.component";
 
 const routes: Routes = [
-  {path: "", component: _NamePage},
+  {path: "", component: _NameComponent},
 ];
 
 @NgModule({

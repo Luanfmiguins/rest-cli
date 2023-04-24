@@ -22,14 +22,12 @@ function parseArgumentsIntoOptions(rawArgs) {
   const platforms = {
     backend: ['b', 'back', 'backend'],
     frontend: ['f', 'front', 'frontend'],
-    customSearchTypes: ['any'],
     app: ['a', 'app']
   }
 
   const templates = {
     backend: ['crud'],
-    frontend: ['page', 'page-tool', 'page-report'],
-    customSearchTypes: ['@types/custom-search'],
+    frontend: ['page', 'page-tool', 'page-forms'],
     app: ['app-database-crud', 'app-database-schema']
   }
 
@@ -89,7 +87,7 @@ function parseArgumentsIntoOptions(rawArgs) {
 async function promptForMissingOptions(options) {
 
   if (!options) {
-    console.log("Missing arguments please type --help for support");
+    console.log("Argumentos ausentes, digite -help para suporte");
   }
   return options;
 }
@@ -97,10 +95,7 @@ async function promptForMissingOptions(options) {
 export async function cli(args) {
   let options = parseArgumentsIntoOptions(args);
   options = await promptForMissingOptions(options);
-  // console.log(options);
   if (options) {
     await createProject(options);
   }
 }
-
-// ...

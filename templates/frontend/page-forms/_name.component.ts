@@ -3,10 +3,10 @@ import { _NameService } from "./_namespace.service";
 
 @Component({
 	selector: "app-_name",
-	templateUrl: "./_namespace.page.html",
-	styleUrls: ["./_namespace.page.scss"]
+	templateUrl: "./_namespace.component.html",
+	styleUrls: ["./_namespace.component.scss"]
 })
-export class _NamePage implements OnInit {
+export class _NameComponent implements OnInit {
 
 	constructor(
     private _nameService: _NameService
