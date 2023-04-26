@@ -1,43 +1,23 @@
 <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">{{ titleModal }}</h4>
-    <button 
-      type="button" 
-      class="btn-close" 
-      aria-label="Close" 
-      (click)="setCloseModal(false)"
-    ></button>
-  </div>
-  
-  <div class="modal-body">
-    <div *ngIf="listErrors.length">
-  
-      <div *ngFor="let error of listErrors" class="alert alert-danger" role="alert">
-        * {{ error }}
-      </div>
-    </div>
-  
-    <form [formGroup]="_NameForm">
-      <div class="mb-3">
-        <label for="name">Nome</label>
-        <div class="input-group">
-          <input 
-            id="name" 
-            class="form-control" 
-            placeholder="Digite o nome aqui"
-            formControlName="name"
-            required
-          />
+ <h4 class="modal-title" id="modal-basic-title">{{ titleModal }}</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="setCloseModal(false)"></button>
+</div>
+
+<div class="modal-body">
+    <form (ngSubmit)="onSubmit()" [formGroup]="_NameForm">
+        <div *ngFor="let item of fields" class="textField {{item.class}}">
+            <label>{{item.label}}</label>
+            <div *ngIf="item.required" class="required"><span>*</span></div>
+            <ng-container *ngIf="item.tag === 'input'">
+                <input [formControlName]="item.value"
+                    [name]="item.value" [required]="item.required" [placeholder]="item.placeholder" [type]="item.type">
+            </ng-container>
+            <ng-container *ngIf="item.tag === 'select'">
+                <select [formControlName]="item.value" [name]="item.value" [required]="item.required">
+                    <option *ngFor="let option of item.items" [value]="option.tipo">{{ option.tipo }}</option>
+                </select>
+            </ng-container>
         </div>
-      </div>  
+        <button class="btn btn-primary" [disabled]="!_NameForm.valid" type="submit">{{ titleModal }}</button>
     </form>
-  </div>
-  
-<div class="modal-footer">
-    <button 
-        type="button" 
-        class="btn btn-primary" 
-        (click)="validateForms()"
-    >
-        {{ titleButton }}
-    </button>
 </div>

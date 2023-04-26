@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { ToastrService } from 'ngx-toastr';
+import { BaseService } from 'src/app/base/base.service';
 import { _NameService } from '../../_name.service';
 
 
@@ -13,7 +13,7 @@ export class ModalToRemove_NameComponent implements OnInit {
 
   constructor(
     private _nameService: _NameService,
-    private toastrService: ToastrService,
+    private toastService: BaseService,
     private activeModal: NgbActiveModal
   ) { }
 
@@ -30,7 +30,7 @@ export class ModalToRemove_NameComponent implements OnInit {
 
     this._nameService.deleteItem(this.itemId).subscribe(() => {
       this.loadingDelete = true;
-      this.toastrService.success("Removido com sucesso", "Sucesso");
+      this.toastService.success("Removido com sucesso");
       this.setCloseModal(true);
     }, (error) => {
       this.loadingDelete = false;

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { PaginateInterface } from "src/app/base/paginate.interface";
 import DownloadFile from "src/utils/DownloadFile";
+import { _namespaceForms } from "./_namespace.forms";
 import { _NameService } from "./_namespace.service";
 import { _NameInterface } from "./_name.interface";
 import { Create_NameGuard } from "./guards/create._name.guard";
@@ -10,7 +11,6 @@ import { Delete_NameGuard } from "./guards/delete._name.guard";
 import { Update_NameGuard } from "./guards/update._name.guard";
 import { CreateUpdate_NameComponent } from "./components/modal-to-create-update/create-update-_name.component";
 import { ModalToRemove_NameComponent } from "./components/modal-to-remove/modal-to-remove-_name.component";
-
 @Component({
 	selector: "app-_name",
 	templateUrl: "./_namespace.page.html",
@@ -36,6 +36,7 @@ export class _NamePage implements OnInit {
   showDeleteItemButton: boolean = false;
   ShowDeleteItemButton: boolean = false;
   loadingTable: boolean = false;
+  headers: { key: string, value: string }[] = []
 
   paginateItems: PaginateInterface<_NameInterface> = {
     page: 1,
@@ -53,22 +54,24 @@ export class _NamePage implements OnInit {
       name: 'Home',
     },
     {
-      path: '/ferramentas',
-      name: 'Ferramentas',
-    },
-    {
-      path: '/ferramentas/_name',
+      path: '/_name',
       name: '_Name',
     },
   ]
 
-  headers = [
-    {key: 'name', value: 'Nome'},
-  ]
 
   ngOnInit(): void {
     this.setPermissionsScreen();
     this.setActivityRoute();
+    this.createHeaders();
+  }
+
+  createHeaders() {
+    for (let form of _namespaceForms) {
+      if (form.required) {
+        this.headers.push({ key: form.value, value: form.label })
+      }
+    }
   }
 
   setPermissionsScreen(){
@@ -122,11 +125,7 @@ export class _NamePage implements OnInit {
         size: "lg",
       });
 
-      if(type === "update"){
-        modalRef.componentInstance.itemUpdate = item;
-      } else {
-        modalRef.componentInstance.itemUpdate = undefined;
-      }
+      modalRef.componentInstance.fields = _namespaceForms;
       
       modalRef.result.then((result) => {
         if(result.success){
