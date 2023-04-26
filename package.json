@@ -1,7 +1,7 @@
 {
     "name": "@rest/rest",
     "version": "1.0.3",
-    "description": "CLI para projetos Core",
+    "description": "CLI",
     "main": "src/main.js",
     "bin": {
         "rest": "bin/rest-cli",
@@ -16,8 +16,7 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [
-        "cli",
-        "smart generate"
+        "cli"
     ],
     "author": "Luan Gustavo",
     "license": "MIT",
