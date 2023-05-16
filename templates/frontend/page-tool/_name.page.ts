@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { PaginateInterface } from "src/app/base/paginate.interface";
 import DownloadFile from "src/utils/DownloadFile";
-import { _namespaceForms } from "./_namespace.forms";
+import { _NameForms } from "./_namespace.forms";
 import { _NameService } from "./_namespace.service";
 import { _NameInterface } from "./_name.interface";
 import { Create_NameGuard } from "./guards/create._name.guard";
@@ -67,7 +67,7 @@ export class _NamePage implements OnInit {
   }
 
   createHeaders() {
-    for (let form of _namespaceForms) {
+    for (let form of _NameForms) {
       if (form.required) {
         this.headers.push({ key: form.value, value: form.label })
       }
@@ -124,8 +124,10 @@ export class _NamePage implements OnInit {
       const modalRef = this.modalService.open(CreateUpdate_NameComponent,{
         size: "lg",
       });
-
-      modalRef.componentInstance.fields = _namespaceForms;
+	modalRef.componentInstance.fields = _NameForms; 
+	if(type !== 'create'){
+		modalRef.componentInstance.itemUpdate = item; 
+	}
       
       modalRef.result.then((result) => {
         if(result.success){
