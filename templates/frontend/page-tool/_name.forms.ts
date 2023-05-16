@@ -1,4 +1,4 @@
-export const _namespaceForms = [
+export const _NameForms = [
     {
         tag: 'input',
         label: "Name",
