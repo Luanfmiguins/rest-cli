@@ -7,7 +7,7 @@
 Para instalar o `@core-cli` globalmente em seu sistema, execute o seguinte comando:
 
 ```
-npm install -g https://github.com/Luanfmiguins/core-cli.git
+npm install -g https://github.com/luangustavofm/core-cli.git
 ```
 
 Isso permitirá o acesso ao CLI de qualquer lugar no terminal.
