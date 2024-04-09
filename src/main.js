@@ -172,14 +172,9 @@ async function copyTemplateFiles(options, logCallback) {
           title: "file created!",
           name: file.replace('_name', newCopyFileName)
         })
-        //return console.log('%s file created!', chalk.bold(file.replace('_name', newCopyFileName)));
       }
-
     }
-
   }))
-
-
 }
 
 export async function createProject(options) {

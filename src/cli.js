@@ -21,14 +21,12 @@ function parseArgumentsIntoOptions(rawArgs) {
 
   const platforms = {
     backend: ['b', 'back', 'backend'],
-    frontend: ['f', 'front', 'frontend'],
-    app: ['a', 'app']
+    frontend: ['f', 'front', 'frontend']
   }
 
   const templates = {
     backend: ['crud'],
-    frontend: ['page', 'page-tool', 'page-forms'],
-    app: ['app-database-crud', 'app-database-schema']
+    frontend: ['page', 'page-tool', 'page-v4-tool']
   }
 
   let options = {
@@ -74,8 +72,6 @@ function parseArgumentsIntoOptions(rawArgs) {
       options.directory = directoryAndName;
     }
   }
-
-
 
   if (options.platform != '' && options.template != '' && options.name != '') {
     return options;

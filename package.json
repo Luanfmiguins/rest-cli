@@ -1,12 +1,12 @@
 {
-    "name": "@rest/rest",
-    "version": "1.0.3",
+    "name": "@core-cli",
+    "version": "2.0.0",
     "description": "CLI",
     "main": "src/main.js",
     "bin": {
-        "rest": "bin/rest-cli",
-        "rest-cli": "bin/rest-cli",
-        "rt": "bin/rest-cli"
+        "core": "bin/core-cli",
+        "core-cli": "bin/core-cli",
+        "cr": "bin/core-cli"
     },
     "publishConfig": {
         "access": "public"

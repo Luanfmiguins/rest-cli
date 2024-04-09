@@ -1,42 +1,64 @@
-# `@rest/rest-generate`
+# `@core-cli`
 
-🏗 CLI para projetos rest
+`@core-cli` é uma ferramenta de linha de comando projetada para acelerar a criação de projetos de desenvolvimento web, facilitando a geração de estruturas de projeto tanto para backend quanto para frontend. Com esta ferramenta, desenvolvedores podem criar rapidamente modelos CRUD para aplicações backend, bem como várias páginas e estruturas para projetos frontend, incluindo suporte para temas claros e escuros.
 
-## Installation
+## Instalação
 
-npm install -g https://github.com/Luanfmiguins/rest-cli.git
+Para instalar o `@core-cli` globalmente em seu sistema, execute o seguinte comando:
 
-##  Usage
+```
+npm install -g https://github.com/Luanfmiguins/core-cli.git
+```
 
-### rest-cli | rest | rt
+Isso permitirá o acesso ao CLI de qualquer lugar no terminal.
 
-#### [--platform | -p] PLATFORM
+## Uso
 
-###### backend | back | b 
-Seleciona uma plataforma de backend
-###### frontend | front | f 
-Seleciona uma plataforma de frontend
-###### application | app | a
-Seleciona uma plataforma de application
+O `@core-cli` pode ser invocado através de diferentes aliases: `core`, `core-cli`, ou `cr`. A seguir, são apresentadas as opções disponíveis e como utilizá-las:
 
-### --create | -c TEMPLATE
-Obrigatório.
-###### crud
-Cria um template de CRUD para Backend
+### Plataforma [--platform | -p]
 
-### [--directory | -d] DIRECTORY
-Cria um diretorio alvo para a copia do template. Na ausencia de nome será usado como nome base dos arquivos.
+Especifique a plataforma do seu projeto com a opção `--platform` (ou `-p`):
 
-### [--name | name] NAME
-Cria um nome para a copia do template. Na ausência de diretório será criado uma pasta com o nome para conter os arquivos na raiz do comando.
+- `backend`, `back`, `b`: Seleciona a plataforma de backend.
+- `frontend`, `front`, `f`: Seleciona a plataforma de frontend.
+
+### Template [--create | -c]
+
+A opção `--create` (ou `-c`) é obrigatória e especifica o tipo de template que você deseja criar. Os templates disponíveis são:
+
+Para **backend**:
+- `crud`: Gera um modelo CRUD completo, com funcionalidades para criar, atualizar, deletar, exportar para Excel, e paginação. As rotas também são configuradas automaticamente na API.
+
+Para **frontend**:
+- `page`: Cria uma página básica, seguindo a estrutura do projeto.
+- `page-tool` (obsoleto): Gera um CRUD completo com paginação, baseado em versões anteriores.
+- `page-v4-tool`: Implementação mais recente que inclui um layout aprimorado, suporte a CRUD completo, e seletor de tema (claro e escuro), baseado no novo modelo de trabalho.
+
+### Diretório [--directory | -d]
+
+Use `--directory` (ou `-d`) para definir um diretório alvo para a cópia do template. Se um nome não for especificado com `--name`, o último segmento do caminho será usado como nome base dos arquivos.
+
+### Nome [--name | -n]
+
+Com `--name` (ou `-n`), você pode definir um nome para a cópia do template. Se um diretório não for especificado, uma nova pasta com esse nome será criada no diretório atual para armazenar os arquivos.
 
 ### Exemplos
-Com apenas nome
 
-    rest -c crud -n brand
-Com apenas diretorio
+**Para criar um CRUD para backend com um nome específico:**
 
-    rt --create crud -d src/core/category
-Completo
+```
+core -c crud -n brand
+```
 
-    rest-cli --platform backend --create crud --directory src/core --name product
+**Especificando um diretório para o template:**
+
+```
+cr --create crud -d src/core/category
+```
+
+**Configuração completa, especificando plataforma, template, diretório e nome:**
+
+```
+core-cli --platform backend --create crud --directory src/core --name product
+```
