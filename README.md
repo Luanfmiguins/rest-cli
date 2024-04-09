@@ -1,10 +1,10 @@
-# `@core-cli`
+# `core-cli`
 
-`@core-cli` é uma ferramenta de linha de comando projetada para acelerar a criação de projetos de desenvolvimento web, facilitando a geração de estruturas de projeto tanto para backend quanto para frontend. Com esta ferramenta, desenvolvedores podem criar rapidamente modelos CRUD para aplicações backend, bem como várias páginas e estruturas para projetos frontend, incluindo suporte para temas claros e escuros.
+`core-cli` é uma ferramenta de linha de comando projetada para acelerar a criação de projetos de desenvolvimento web, facilitando a geração de estruturas de projeto tanto para backend quanto para frontend. Com esta ferramenta, desenvolvedores podem criar rapidamente modelos CRUD para aplicações backend, bem como várias páginas e estruturas para projetos frontend, incluindo suporte para temas claros e escuros.
 
 ## Instalação
 
-Para instalar o `@core-cli` globalmente em seu sistema, execute o seguinte comando:
+Para instalar o `core-cli` globalmente em seu sistema, execute o seguinte comando:
 
 ```
 npm install -g https://github.com/luangustavofm/core-cli.git
@@ -14,7 +14,7 @@ Isso permitirá o acesso ao CLI de qualquer lugar no terminal.
 
 ## Uso
 
-O `@core-cli` pode ser invocado através de diferentes aliases: `core`, `core-cli`, ou `cr`. A seguir, são apresentadas as opções disponíveis e como utilizá-las:
+O `core-cli` pode ser invocado através de diferentes aliases: `core`, `core-cli`, ou `cr`. A seguir, são apresentadas as opções disponíveis e como utilizá-las:
 
 ### Plataforma [--platform | -p]
 
