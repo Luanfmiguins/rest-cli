@@ -1,5 +1,5 @@
 {
-    "name": "@core-cli",
+    "name": "core-cli",
     "version": "2.0.0",
     "description": "CLI",
     "main": "src/main.js",
