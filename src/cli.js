@@ -25,7 +25,7 @@ function parseArgumentsIntoOptions(rawArgs) {
   }
 
   const templates = {
-    backend: ['crud'],
+    backend: ['crud', 'crud-v4'],
     frontend: ['page', 'page-tool', 'page-v4-tool']
   }
 
