@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import { _NameInterface } from "./_name.interface";
-import BaseRepository from "_baseDirectory/base.repository";
+import BaseRepository from "_baseDirectory/repositories/base.repository";
 
 const prisma = new PrismaClient();
 
