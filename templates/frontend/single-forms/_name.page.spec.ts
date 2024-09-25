@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
-import { _NameComponent } from "./_namespace.component";
+import { _NameComponent } from "./_namespace.page";
 
 describe("_NameComponent", () => {
 	let component: _NameComponent;

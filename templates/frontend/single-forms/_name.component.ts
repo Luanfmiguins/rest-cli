@@ -5,8 +5,8 @@ import { _NameForms } from "./_namespace.forms";
 
 @Component({
 	selector: "core-_name",
-	templateUrl: "./_namespace.component.html",
-	styleUrls: ["./_namespace.component.scss"]
+	templateUrl: "./_namespace.page.html",
+	styleUrls: ["./_namespace.page.scss"]
 })
 export class _NameComponent implements OnInit {
 

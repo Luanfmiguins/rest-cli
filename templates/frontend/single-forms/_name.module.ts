@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { _NameRoutingModule } from "./_namespace-routing.module";
-import { _NameComponent } from "./_namespace.component";
+import { _NameComponent } from "./_namespace.page";
 import { _NameService } from "./_namespace.service";
 import { BaseModule } from "../../base/base.module";
 import { CommonModule } from "@angular/common";
