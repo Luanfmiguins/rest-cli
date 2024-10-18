@@ -1,43 +1,62 @@
 {
-    "name": "core-cli",
-    "version": "3.0.0",
-    "description": "CLI",
-    "main": "src/main.js",
-    "bin": {
-        "core": "bin/core-cli",
-        "core-cli": "bin/core-cli",
-        "cr": "bin/core-cli"
-    },
-    "publishConfig": {
-        "access": "public"
-    },
-    "scripts": {
-        "start": "node src/main.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [
-        "cli"
-    ],
-    "author": "Luan Gustavo",
-    "license": "MIT",
-    "dependencies": {
-        "arg": "^4.1.0",
-        "chalk": "^2.4.2",
-        "covgen": "^3.1.0",
-        "esm": "^3.2.18",
-        "execa": "^1.0.0",
-        "express": "^4.17.3",
-        "gitignore": "^0.6.0",
-        "inquirer": "^6.2.2",
-        "listr": "^0.14.3",
-        "ncp": "^2.0.0",
-        "pkg-install": "^0.2.0",
-        "spdx-license-list": "^5.0.0"
-    },
-    "files": [
-        "bin/",
-        "src/",
-        "templates/",
-        "utils/"
-    ]
+  "name": "core-cli",
+  "version": "0.0.1",
+  "description": "A versatile command-line tool designed to streamline the creation of web development projects by generating structured templates for backend and frontend. Supports dynamic CRUD generation, page structures, and theme customization.",
+  "main": "dist/main.js",
+  "bin": {
+    "core": "bin/core-cli",
+    "core-cli": "bin/core-cli",
+    "cr": "bin/core-cli"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc && npm run copy-templates",
+    "start": "node dist/cli.js",
+    "dev": "tsc --watch",
+    "copy-templates": "cpx 'src/templates/**/*' dist/templates"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/core-factory/core-cli.git"
+  },
+  "keywords": [
+    "cli"
+  ],
+  "author": "Luan Gustavo",
+  "license": "MIT",
+  "dependencies": {
+    "arg": "^4.1.0",
+    "chalk": "^2.4.2",
+    "covgen": "^3.1.0",
+    "esm": "^3.2.18",
+    "execa": "^1.0.0",
+    "express": "^4.17.3",
+    "gitignore": "^0.6.0",
+    "inquirer": "^6.2.2",
+    "listr": "^0.14.3",
+    "ncp": "^2.0.0",
+    "pkg-install": "^0.2.0",
+    "spdx-license-list": "^5.0.0"
+  },
+  "files": [
+    "bin/",
+    "dist/",
+    "templates/",
+    "utils/"
+  ],
+  "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/execa": "^2.0.0",
+    "@types/express": "^5.0.0",
+    "@types/inquirer": "^9.0.7",
+    "@types/jest": "^29.5.13",
+    "@types/listr": "^0.14.9",
+    "@types/ncp": "^2.0.8",
+    "@types/node": "^22.7.6",
+    "cpx": "^1.5.0",
+    "jest": "^29.7.0",
+    "typescript": "^5.6.3"
+  }
 }
