@@ -1,4 +1,4 @@
-# `core-cli`
+# core-cli
 
 `core-cli` is a command-line tool designed to accelerate the creation of web development projects by simplifying the generation of project structures for both backend and frontend. This tool allows developers to quickly generate CRUD models for backend applications and create various pages and structures for frontend projects, including support for light and dark themes.
 
@@ -7,7 +7,7 @@
 To install `core-cli` globally on your system, run the following command:
 
 ```bash
-npm install -g https://github.com/luangustavofm/core-cli.git
+npm install -g https://github.com/core-factory/core-cli.git
 ```
 
 This command allows you to access `core-cli` from anywhere in your terminal.
@@ -55,16 +55,6 @@ This command allows you to access `core-cli` from anywhere in your terminal.
    ```bash
    core-cli --platform backend --create crud-v4 --directory src/core --name product
    ```
-
-## Command Details
-
-- The `cli.js` script is responsible for parsing command-line arguments and mapping them to options. It validates provided values against a list of recognized platforms and templates and sets the directory and name accordingly.
-- The `main.js` script handles the actual project generation by copying relevant templates and replacing placeholders in the template files with the values provided through the CLI options.
-- The tool checks for the existence of required directories and gracefully handles missing arguments by displaying a helpful message.
-  
-## Customization & Templates
-
-The `core-cli` tool allows for extensive customization through pre-defined templates. It looks for specific files in the templates directory and processes them by replacing placeholders such as `_namespace`, `_Name`, `_nameService`, `_nameController`, and more with the values provided during execution.
 
 ## Error Handling & Messages
 
